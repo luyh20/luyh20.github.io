@@ -1,0 +1,12 @@
+- id: fgc
+  title: "Hybrid Physical Metric For 6-DoF Grasp Pose Detection"
+  venue: ICRA, 2022
+  description: "We proposed the hybrid physical metric to generate confidence labels for 6-dof grasp poses,
+  and designed a transformer-based point cloud learning network, FGC_graspnet, to predict 6-dof grasp poses."
+  project_page: "https://github.com/luyh20/FGC-GraspNet"
+  github: luyh20/FGC-GraspNet
+  arxiv: 2206.11141
+  image: fgc.jpg
+  authors:
+    - luyh
+
