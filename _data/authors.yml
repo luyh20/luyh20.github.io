@@ -3,3 +3,28 @@ luyh:
   last_name: Lu
   website: https://luyh20.github.io/
   is_me: true
+
+wsj:
+  first_name: Shengjin
+  last_name: Wang
+  website: http://web.ee.tsinghua.edu.cn/wangshengjin/en/index/2817/list/index.htm
+
+lyl:
+  first_name: Yali
+  last_name: Li
+  website:
+
+dbx:
+  first_name: Beixing
+  last_name: Deng
+  website:
+
+wzy:
+  first_name: Zhengyu
+  last_name: Wang
+  website:
+
+zpy:
+  first_name: Peiyuan
+  last_name: Zhi
+  website:
