@@ -30,6 +30,7 @@ description: >-
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://luyh20.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: luyh20
+google_scholar: Ux184lMAAAAJ
 
 # Build settings
 theme: minima
