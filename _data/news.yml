@@ -4,5 +4,17 @@
 
 - date: Jun 2022
   description: >-
-    We built a Visual Grounding dataset for robotics, [_RefIndoor_](https://luyh20.github.io/RefIndoor.github.io/).
-    The paper is under reviewing.
+    We built a Visual Grounding dataset for robotics, [_RoboRefIt_](https://luyh20.github.io/RoboRefIt.github.io/).
+
+- date: Mar 2023
+  description: >-
+    I led the CV-AI team to participate in 2023 Intel Indoor Robot Learning Grand Challenge in Shanghai China, and won the FRIST PRIZE 
+    in the Recognition Track (Few-shot detection task) and the SECOND PRIZE in the Manipulation Track (Grasping task and Feeding task).
+
+- date: Jun 2023
+  description: >-
+    I received the honor of Outstanding Master's Graduate Student from Tsinghua University (top 2%).
+
+- date: Jun 2023
+  description: >-
+    [_VL_Grasp_](https://github.com/luyh20/VL-Grasp) has been accepted to IROS 2023.
