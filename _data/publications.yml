@@ -25,7 +25,7 @@
   grounding dataset specially designed for the robot interaction grasp task, called RoboRefIt."
   project_page: "https://github.com/luyh20/VL-Grasp"
   github: luyh20/VL-Grasp
-  arxiv: 2308.00064
+  arxiv: 2308.00640
   image: vlgrasp.png
   authors:
     - luyh
