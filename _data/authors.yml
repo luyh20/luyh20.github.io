@@ -38,3 +38,68 @@ fyx:
   first_name: Yixuan
   last_name: Fan
   website:
+
+jiongxu_chen:
+  first_name: Jiongxu
+  last_name: Chen
+
+hexiang_wei:
+  first_name: Hexiang
+  last_name: Wei
+  website: https://scholar.google.com/citations?user=VwOF_TkAAAAJ
+
+jiajin_wu:
+  first_name: Jiajin
+  last_name: Wu
+
+juelin_li:
+  first_name: Juelin
+  last_name: Li
+
+mingjian_liang:
+  first_name: Mingjian
+  last_name: Liang
+  website: https://openreview.net/profile?id=~MingJian_Liang1
+
+fan_yang:
+  first_name: Fan
+  last_name: Yang
+
+zhuowei_liang:
+  first_name: Zhuowei
+  last_name: Liang
+
+zihao_liu:
+  first_name: Zihao
+  last_name: Liu
+
+zhennan_wang:
+  first_name: Zhennan
+  last_name: Wang
+  website: https://scholar.google.com/citations?user=fDUwF94AAAAJ
+
+sheng_wang:
+  first_name: Sheng
+  last_name: Wang
+  website: https://chantsss.github.io/
+
+lin_shao:
+  first_name: Lin
+  last_name: Shao
+  website: https://linsats.github.io/
+
+weichen_zhang:
+  first_name: Weichen
+  last_name: Zhang
+
+wenyi_xiao:
+  first_name: Wenyi
+  last_name: Xiao
+
+haohui_chen:
+  first_name: Haohui
+  last_name: Chen
+
+yiyun_fei:
+  first_name: Yiyun
+  last_name: Fei

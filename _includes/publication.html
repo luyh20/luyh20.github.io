@@ -1,0 +1,53 @@
+{% assign paper = include.paper %}
+{% assign pdf = paper.arxiv | prepend: 'https://arxiv.org/pdf/' %}
+{% assign landing = paper.project_page | default: pdf %}
+{% assign github = paper.github | prepend: 'https://github.com/' %}
+<li class="paper" id="{{ paper.id }}">
+  <div class="paper-preview">
+    <a href="{{ landing }}" aria-label="{{ paper.title | escape }}">
+      {% if paper.image_mouseover contains 'mp4' %}<video autoplay muted loop playsinline preload="none" aria-hidden="true"><source src="{{ '/images/' | append: paper.image_mouseover | relative_url }}" type="video/mp4"></video>{% endif %}
+      <img src="{{ '/images/' | append: paper.image | relative_url }}" loading="lazy" alt="{{ paper.image_alt | default: paper.title | escape }}">
+    </a>
+  </div>
+  <div class="paper-body">
+    <h3><a href="{{ landing }}">{{ paper.title | escape }}</a></h3>
+    <p class="authors">
+      {%- for author_id in paper.authors -%}
+        {%- if forloop.index == 6 -%}<span class="extra-authors" id="{{ paper.id }}-authors">{%- endif -%}
+        {%- unless forloop.first -%}, {% endunless -%}
+        {%- assign author = site.data.authors[author_id] -%}
+        {%- capture name -%}{{ author.first_name }} {% if author.middle_name %}{{ author.middle_name }} {% endif %}{{ author.last_name }}{%- endcapture -%}
+        {%- if author.is_me -%}<span class="self">{{ name }}</span>{%- elsif author.website -%}<a href="{{ author.website }}">{{ name }}</a>{%- else -%}{{ name }}{%- endif -%}
+        {%- if paper.equal_contributors contains author_id -%}<sup>*</sup>{%- endif -%}
+        {%- if forloop.last and forloop.index > 5 -%}</span>{%- endif -%}
+      {%- endfor -%}
+      {% if paper.authors.size > 5 %}<button type="button" class="expand-authors" aria-expanded="true" aria-controls="{{ paper.id }}-authors" data-count="{{ paper.authors.size | minus: 5 }}" hidden>Show fewer authors</button>{% endif %}
+    </p>
+    <p>{% if paper.venue contains 'arXiv' %}{{ paper.venue }}{% else %}<em>{{ paper.venue | split: ',' | first }}</em>,{{ paper.venue | split: ',' | last }}{% endif %}</p>
+    {% if paper.equal_contributors %}<p class="credit">* Equal contribution</p>{% endif %}
+    {% for award in paper.awards %}<p class="credit">{{ award }}</p>{% endfor %}
+    <div class="resources" aria-label="Resources for {{ paper.title | escape }}">
+      {% if paper.project_page %}
+        <button type="button" aria-expanded="false" aria-controls="{{ paper.id }}-abstract" hidden>Abs</button>
+        <a href="https://arxiv.org/abs/{{ paper.arxiv }}">arXiv</a>
+        <button type="button" aria-expanded="false" aria-controls="{{ paper.id }}-bib" hidden>Bib</button>
+        <a href="{{ pdf }}">PDF</a>
+        {% if paper.github %}<a href="{{ github }}">Code</a>{% endif %}
+        {% unless paper.project_page == github %}<a href="{{ paper.project_page }}">Website</a>{% endunless %}
+        {% if paper.press_url %}<a href="{{ paper.press_url }}" lang="zh-CN">{{ paper.press_name }}</a>{% endif %}
+      {% else %}
+        <a href="{{ pdf }}">arXiv</a>
+      {% endif %}
+    </div>
+    {% if paper.project_page %}
+      <p class="detail" id="{{ paper.id }}-abstract" hidden>{{ paper.description | escape }}</p>
+      <pre class="detail" id="{{ paper.id }}-bib" hidden>@misc{lu{{ paper.arxiv | slice: 0, 2 | prepend: '20' }}{{ paper.id }},
+  title = { {{- paper.title -}} },
+  author = { {% for author_id in paper.authors %}{% assign author = site.data.authors[author_id] %}{{ author.last_name }}, {{ author.first_name }}{% unless forloop.last %} and {% endunless %}{% endfor %} },
+  year = { {{- paper.venue | split: ',' | last | strip -}} },
+  eprint = { {{- paper.arxiv -}} },
+  archivePrefix = {arXiv}
+}</pre>
+    {% endif %}
+  </div>
+</li>

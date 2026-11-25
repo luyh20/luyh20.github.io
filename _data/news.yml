@@ -1,21 +1,32 @@
-- date: Feb 2022
+- date: Nov 20, 2026
   description: >-
-    [_FGC_GraspNet_](https://github.com/luyh20/FGC-GraspNet) has been accepted to ICRA 2022.
+    [机器之心](https://mp.weixin.qq.com/s/nxr34ClHbxqVW3aULfyYVQ) featured our work on [WorldFlow](https://worldflow-rbs.github.io/).
 
-- date: Jun 2022
+- date: Oct 29, 2026
   description: >-
-    We built a Visual Grounding dataset for robotics, [_RoboRefIt_](https://luyh20.github.io/RoboRefIt.github.io/).
+    We released [WorldFlow](https://worldflow-rbs.github.io/), a world model that jointly predicts future video and 3D motion.
+
+- date: Jul 31, 2026
+  description: >-
+    Our [LayoutDSL paper](https://arxiv.org/pdf/2608.07547) is on arXiv. It studies how a language model can learn to arrange furniture using a domain-specific language.
+
+- date: Jun 2023
+  description: >-
+    [VL-Grasp](https://github.com/luyh20/VL-Grasp) was accepted to IROS 2023.
+
+- date: Jun 2023
+  description: >-
+    Tsinghua University named me an Outstanding Master's Graduate Student (top 2%) and awarded my thesis an Outstanding Master's Thesis honor (top 5%).
 
 - date: Mar 2023
   description: >-
-    I led the CV-AI team to participate in 2023 Intel Indoor Robot Learning Grand Challenge in Shanghai China, and won the FRIST PRIZE 
-    in the Recognition Track (Few-shot detection task) and the SECOND PRIZE in the Manipulation Track (Grasping task and Feeding task).
+    I led the CV-AI team at the Intel Indoor Robot Learning Grand Challenge in Shanghai. We won first prize in the Recognition Track (few-shot detection)
+    and second prize in the Manipulation Track (grasping and feeding).
 
-- date: Jun 2023
+- date: Jun 2022
   description: >-
-    I received the honor of 2023 Outstanding Master's Graduate Student from Tsinghua University (top 2%). I also received the honor of 2023
-    Outstanding Master's Thesis from Tsinghua University (top 5%).
+    We built [RoboRefIt](https://luyh20.github.io/RoboRefIt.github.io/), a visual grounding dataset for robotics.
 
-- date: Jun 2023
+- date: Feb 2022
   description: >-
-    [_VL_Grasp_](https://github.com/luyh20/VL-Grasp) has been accepted to IROS 2023.
+    [FGC-GraspNet](https://github.com/luyh20/FGC-GraspNet) was accepted to ICRA 2022.

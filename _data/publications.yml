@@ -1,20 +1,48 @@
-- id: fgc
-  title: "Hybrid Physical Metric For 6-DoF Grasp Pose Detection"
-  venue: ICRA, 2022
-  description: "We proposed the hybrid physical metric to generate confidence labels for 6-dof grasp poses,
-  and designed a transformer-based point cloud learning network, FGC_graspnet, to predict 6-dof grasp poses."
-  project_page: "https://github.com/luyh20/FGC-GraspNet"
-  github: luyh20/FGC-GraspNet
-  arxiv: 2206.11141
-  image: lion.png
+- id: worldflow
+  title: "WorldFlow: Joint Video and 3D Motion Prediction via Large-Scale Pretraining"
+  venue: arXiv preprint, 2026
+  description: >-
+    WorldFlow predicts how a scene will look and how points in it will move in 3D.
+    A single model learns both tasks from 1.44 million object-level samples spanning
+    simulated and real-world interactions.
+  project_page: https://worldflow-rbs.github.io/
+  github: roboscience-ai/worldflow
+  arxiv: "2610.39278"
+  press_name: 机器之心
+  press_url: https://mp.weixin.qq.com/s/nxr34ClHbxqVW3aULfyYVQ
+  image: worldflow.webp
+  image_alt: Predicted motion trajectories across nine WorldFlow scenes
   authors:
     - luyh
-    - dbx
-    - wzy
-    - zpy
-    - lyl
-    - wsj
+    - jiongxu_chen
+    - hexiang_wei
+    - jiajin_wu
+    - juelin_li
+    - mingjian_liang
+    - fan_yang
+    - zhuowei_liang
+    - zihao_liu
+    - zhennan_wang
+    - sheng_wang
+    - lin_shao
+  equal_contributors: [luyh, jiongxu_chen]
 
+- id: layoutdsl
+  title: "Learning an Interior Layout Policy in a Domain Specific Language Action Space"
+  venue: arXiv preprint, 2026
+  description: >-
+    LayoutDSL generates furniture layouts as a sequence of design decisions in a
+    domain-specific language. The policy learns from annotated rooms and uses
+    reinforcement learning to account for physical constraints and interior design principles.
+  arxiv: "2608.07547"
+  image: layoutdsl.webp
+  image_alt: A LayoutDSL furniture plan beside its rendered living room
+  authors:
+    - luyh
+    - weichen_zhang
+    - wenyi_xiao
+    - haohui_chen
+    - yiyun_fei
 
 - id: vlgrasp
   title: "VL-Grasp: a 6-Dof Interactive Grasp Policy for Language-Oriented Objects in Cluttered Indoor Scenes"
@@ -25,12 +53,29 @@
   grounding dataset specially designed for the robot interaction grasp task, called RoboRefIt."
   project_page: "https://github.com/luyh20/VL-Grasp"
   github: luyh20/VL-Grasp
-  arxiv: 2308.00640/
+  arxiv: "2308.00640"
   image: vlgrasp.png
   authors:
     - luyh
     - fyx
     - dbx
     - lff
+    - lyl
+    - wsj
+
+- id: fgc
+  title: "Hybrid Physical Metric For 6-DoF Grasp Pose Detection"
+  venue: ICRA, 2022
+  description: "We proposed the hybrid physical metric to generate confidence labels for 6-dof grasp poses,
+  and designed a transformer-based point cloud learning network, FGC_graspnet, to predict 6-dof grasp poses."
+  project_page: "https://github.com/luyh20/FGC-GraspNet"
+  github: luyh20/FGC-GraspNet
+  arxiv: "2206.11141"
+  image: lion.png
+  authors:
+    - luyh
+    - dbx
+    - wzy
+    - zpy
     - lyl
     - wsj
