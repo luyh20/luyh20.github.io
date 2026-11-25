@@ -52,6 +52,8 @@ const entries = [
   { title: 'News', href: '#news' },
   { title: 'Selected Publications', href: '#publications' },
   ...papers,
+  { title: 'Projects', href: '#projects' },
+  { title: document.querySelector('#veph h3').textContent, href: '#veph', terms: 'robotic agents research proposal Feishu' },
   ...Array.from(document.querySelectorAll('.profile-links a'), link => ({
     title: link.textContent.trim(), href: link.getAttribute('href')
   }))
@@ -106,15 +108,19 @@ if (typeof dialog.showModal === 'function') {
 }
 
 const progress = document.querySelector('#reading-progress');
-const publications = document.querySelector('#publications');
 const navLinks = navigation.querySelectorAll('a');
+const sections = Array.from(navLinks, link => document.querySelector(link.hash));
 function updateReadingPosition() {
   const distance = root.scrollHeight - window.innerHeight;
   const fraction = distance > 0 ? Math.min(1, Math.max(0, window.scrollY / distance)) : 0;
   progress.style.transform = 'scaleX(' + fraction + ')';
-  const current = publications.getBoundingClientRect().top <= 84 || fraction >= .99 ? '#publications' : '#about';
+  let current = sections[0];
+  for (const section of sections) {
+    if (section.getBoundingClientRect().top <= 84) current = section;
+  }
+  if (fraction >= .99) current = sections[sections.length - 1];
   navLinks.forEach(link => {
-    if (link.hash === current) link.setAttribute('aria-current', 'location');
+    if (link.hash === '#' + current.id) link.setAttribute('aria-current', 'location');
     else link.removeAttribute('aria-current');
   });
 }

@@ -37,6 +37,7 @@ layout: null
       <div class="nav-links" id="nav-links">
         <a href="#about" aria-current="page">about</a>
         <a href="#publications">publications</a>
+        <a href="#projects">projects</a>
         <button type="button" id="search-toggle" aria-label="Search this site (Ctrl or Command K)" hidden><span id="search-shortcut">ctrl k</span> <i class="fas fa-search" aria-hidden="true"></i></button>
         <button type="button" id="theme-toggle" aria-label="Toggle light and dark theme" hidden><span class="light-icon"><i class="fas fa-sun" aria-hidden="true"></i></span><span class="dark-icon"><i class="fas fa-moon" aria-hidden="true"></i></span></button>
       </div>
@@ -46,17 +47,18 @@ layout: null
   <main class="container">
     <header class="profile-header">
       <h1><strong>{{ site.data.authors.luyh.first_name }}</strong> {{ site.data.authors.luyh.last_name | upcase }}</h1>
-      <p>Master’s graduate from Tsinghua University</p>
+      <p>World models and robotics at RoboScience</p>
     </header>
     <div class="introduction">
       <figure class="portrait">
         <img src="{{ '/images/person.jpg' | relative_url }}" width="1280" height="1706" alt="{{ site.name | escape }}">
         <figcaption>Email: <a href="mailto:{{ site.email }}">{{ site.email }}</a></figcaption>
       </figure>
-      {% capture bio %}Hi, I’m {{ site.name }}. {{ site.description }}{% endcapture %}
-      {{ bio | markdownify }}
-      <p>My recent work explores how models learn about motion and space. In <strong><a href="#worldflow">WorldFlow</a></strong>, we predict future video together with the 3D trajectories of points in a scene. In <strong><a href="#layoutdsl">LayoutDSL</a></strong>, we study how a language model can arrange furniture one design decision at a time.</p>
-      <p>My earlier work on <a href="#vlgrasp">VL-Grasp</a> studied how a robot can pick out an object in a cluttered scene from a language description. Before joining Tsinghua, I earned my bachelor’s degree at <strong>Huazhong University of Science and Technology</strong>.</p>
+      <p>Hi, I’m {{ site.name }}. At RoboScience, I study how world models can predict motion in 3D. In <strong><a href="#worldflow">WorldFlow</a></strong>, we train a model to predict both future video frames and the 3D trajectories of points in a scene. <a href="https://mp.weixin.qq.com/s/nxr34ClHbxqVW3aULfyYVQ" lang="zh-CN">机器之心</a> featured this work.</p>
+      <p>I’m also exploring hierarchical models for robotic agents and the software harnesses that coordinate their policies. <a href="#veph">VEPH</a> is my proposal for using verification to guide how an ensemble of robot policies evolves.</p>
+      <p>Previously, I worked on 3D scenes at Alibaba. For <strong><a href="#layoutdsl">LayoutDSL</a></strong>, I designed a domain-specific language for arranging furniture, developed a policy that writes layout programs in that language, and built the training pipeline from supervised fine-tuning through reinforcement learning.</p>
+      <p>I also developed applications for scene reconstruction, image-layer inpainting, and 3D mesh retopology. I’m particularly familiar with VGGT for multi-view reconstruction and PolyGen for mesh generation. I built the end-to-end real-to-sim pipeline behind Taobao’s <span lang="zh-CN">放我家</span> feature, which shoppers have used about a million times to preview furniture in their homes.</p>
+      <p>I earned my master’s degree in the Department of Electronic Engineering at Tsinghua University, where <a href="https://scholar.google.com/citations?user=RgzLZZsAAAAJ&amp;hl=zh-CN&amp;oi=ao">Prof. Shengjin Wang</a> advised me. My work on <a href="#vlgrasp">VL-Grasp</a> studied how robots can grasp an object described in natural language. I earned my bachelor’s degree at Huazhong University of Science and Technology.</p>
       <p class="profile-links"><a href="{{ '/cv.html' | relative_url }}">CV</a> <a href="https://scholar.google.com/citations?user={{ site.google_scholar }}">Google Scholar</a> <a href="https://github.com/{{ site.github_username }}">GitHub</a></p>
     </div>
     <section id="news" aria-labelledby="news-title">
@@ -81,6 +83,13 @@ layout: null
           {% include publication.html paper=paper %}
         {% endfor %}
       </ol>
+    </section>
+    <section id="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title"><a href="#projects">Projects</a></h2>
+      <article id="veph">
+        <h3>VEPH: A Verification-Guided Harness for Evolving Policy Ensembles for Compositional Generalization</h3>
+        <a href="https://roboscience.feishu.cn/wiki/NjBFwG2uIi1WYSkJXKYcpjhQnuh">Research proposal on Feishu</a>
+      </article>
     </section>
     <div class="socials" aria-label="Contact and profiles">
       <a href="mailto:{{ site.email }}" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>

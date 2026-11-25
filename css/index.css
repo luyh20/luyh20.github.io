@@ -98,6 +98,7 @@ section { margin-bottom: 2rem; }
 .paper-preview:hover video, .paper-preview:focus-within video { display: block; }
 .paper-preview:hover video + img, .paper-preview:focus-within video + img { display: none; }
 .paper h3 { margin: 0; font: 400 1rem/1.5 Roboto, "Helvetica Neue", Arial, sans-serif; }
+#projects h3 { font-size: 1rem; font-weight: 500; margin: 1rem 0 .25rem; }
 .paper p { margin: 0; }
 .paper .self { font-style: normal; text-decoration: underline; text-underline-offset: 2px; }
 .paper sup { line-height: 0; }
