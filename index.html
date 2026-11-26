@@ -11,7 +11,7 @@ layout: null
   <link rel="canonical" href="{{ '/' | absolute_url }}">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;display=swap">
-  <link rel="stylesheet" href="{{ '/css/index.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/css/index.css' | relative_url }}?v={{ site.time | date: '%s' }}">
   <script>
     document.documentElement.classList.add('js');
     let preferredTheme;
@@ -19,7 +19,7 @@ layout: null
     document.documentElement.dataset.theme = preferredTheme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
   </script>
   <script defer src="{{ '/js/fontawesome.all.min.js' | relative_url }}"></script>
-  <script defer src="{{ '/js/index.js' | relative_url }}"></script>
+  <script defer src="{{ '/js/index.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
   {% if site.google_analytics %}
   <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
   <script>
@@ -36,8 +36,9 @@ layout: null
       <button type="button" class="menu-button" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation" hidden><i class="fas fa-bars" aria-hidden="true"></i></button>
       <div class="nav-links" id="nav-links">
         <a href="#about" aria-current="page">about</a>
+        <a href="#preprints">preprints</a>
         <a href="#publications">publications</a>
-        <a href="#projects">projects</a>
+        {% if site.show_projects %}<a href="#projects">projects</a>{% endif %}
         <button type="button" id="search-toggle" aria-label="Search this site (Ctrl or Command K)" hidden><span id="search-shortcut">ctrl k</span> <i class="fas fa-search" aria-hidden="true"></i></button>
         <button type="button" id="theme-toggle" aria-label="Toggle light and dark theme" hidden><span class="light-icon"><i class="fas fa-sun" aria-hidden="true"></i></span><span class="dark-icon"><i class="fas fa-moon" aria-hidden="true"></i></span></button>
       </div>
@@ -47,19 +48,20 @@ layout: null
   <main class="container">
     <header class="profile-header">
       <h1><strong>{{ site.data.authors.luyh.first_name }}</strong> {{ site.data.authors.luyh.last_name | upcase }}</h1>
-      <p>World models and robotics at RoboScience</p>
     </header>
     <div class="introduction">
       <figure class="portrait">
         <img src="{{ '/images/person.jpg' | relative_url }}" width="1280" height="1706" alt="{{ site.name | escape }}">
-        <figcaption>Email: <a href="mailto:{{ site.email }}">{{ site.email }}</a></figcaption>
       </figure>
-      <p>Hi, I’m {{ site.name }}. At RoboScience, I study how world models can predict motion in 3D. In <strong><a href="#worldflow">WorldFlow</a></strong>, we train a model to predict both future video frames and the 3D trajectories of points in a scene. <a href="https://mp.weixin.qq.com/s/nxr34ClHbxqVW3aULfyYVQ" lang="zh-CN">机器之心</a> featured this work.</p>
-      <p>I’m also exploring hierarchical models for robotic agents and the software harnesses that coordinate their policies. <a href="#veph">VEPH</a> is my proposal for using verification to guide how an ensemble of robot policies evolves.</p>
-      <p>Previously, I worked on 3D scenes at Alibaba. For <strong><a href="#layoutdsl">LayoutDSL</a></strong>, I designed a domain-specific language for arranging furniture, developed a policy that writes layout programs in that language, and built the training pipeline from supervised fine-tuning through reinforcement learning.</p>
-      <p>I also developed applications for scene reconstruction, image-layer inpainting, and 3D mesh retopology. I’m particularly familiar with VGGT for multi-view reconstruction and PolyGen for mesh generation. I built the end-to-end real-to-sim pipeline behind Taobao’s <span lang="zh-CN">放我家</span> feature, which shoppers have used about a million times to preview furniture in their homes.</p>
-      <p>I earned my master’s degree in the Department of Electronic Engineering at Tsinghua University, where <a href="https://scholar.google.com/citations?user=RgzLZZsAAAAJ&amp;hl=zh-CN&amp;oi=ao">Prof. Shengjin Wang</a> advised me. My work on <a href="#vlgrasp">VL-Grasp</a> studied how robots can grasp an object described in natural language. I earned my bachelor’s degree at Huazhong University of Science and Technology.</p>
-      <p class="profile-links"><a href="{{ '/cv.html' | relative_url }}">CV</a> <a href="https://scholar.google.com/citations?user={{ site.google_scholar }}">Google Scholar</a> <a href="https://github.com/{{ site.github_username }}">GitHub</a></p>
+      <p>Hi, I’m {{ site.name }}. I earned my master’s degree in the Department of Electronic Engineering at Tsinghua University, where I studied robotics under the supervision of <a href="https://scholar.google.com/citations?user=RgzLZZsAAAAJ&amp;hl=zh-CN&amp;oi=ao">Prof. Shengjin Wang</a>. Before that, I earned my bachelor’s degree at Huazhong University of Science and Technology.</p>
+      <p>I now work at RoboScience, where my research focuses on world models and embodied AI. Previously, I worked on 3D scene reconstruction, synthesis, and parsing at Alibaba.</p>
+      <p class="profile-links">
+        <a href="{{ '/cv.html' | relative_url }}">CV</a>
+        <a href="https://scholar.google.com/citations?user={{ site.google_scholar }}">Google Scholar</a>
+        <a href="https://github.com/{{ site.github_username }}">GitHub</a>
+        <a href="https://huggingface.co/luyh20">Hugging Face</a>
+      </p>
+      <p class="profile-email">Email: {{ site.email | escape }}</p>
     </div>
     <section id="news" aria-labelledby="news-title">
       <h2 id="news-title"><a href="#news">News</a></h2>
@@ -76,21 +78,26 @@ layout: null
         </table>
       </div>
     </section>
-    <section id="publications" aria-labelledby="publications-title">
-      <h2 id="publications-title"><a href="#publications">Selected Publications</a></h2>
+    {% assign paper_groups = 'preprints,publications' | split: ',' %}
+    {% for group in paper_groups %}
+    <section id="{{ group }}" aria-labelledby="{{ group }}-title">
+      <h2 id="{{ group }}-title"><a href="#{{ group }}">{{ group | capitalize }}</a></h2>
       <ol class="papers">
-        {% for paper in site.data.publications %}
+        {% for paper in site.data[group] %}
           {% include publication.html paper=paper %}
         {% endfor %}
       </ol>
     </section>
+    {% endfor %}
+    {% if site.show_projects %}
     <section id="projects" aria-labelledby="projects-title">
       <h2 id="projects-title"><a href="#projects">Projects</a></h2>
-      <article id="veph">
+      <article id="veph" data-search-terms="robotic agents">
         <h3>VEPH: A Verification-Guided Harness for Evolving Policy Ensembles for Compositional Generalization</h3>
         <a href="https://roboscience.feishu.cn/wiki/NjBFwG2uIi1WYSkJXKYcpjhQnuh">Research proposal on Feishu</a>
       </article>
     </section>
+    {% endif %}
     <div class="socials" aria-label="Contact and profiles">
       <a href="mailto:{{ site.email }}" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
       <a href="https://scholar.google.com/citations?user={{ site.google_scholar }}" aria-label="Google Scholar"><i class="fas fa-graduation-cap" aria-hidden="true"></i></a>

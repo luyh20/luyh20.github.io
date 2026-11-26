@@ -48,6 +48,8 @@
   eprint = { {{- paper.arxiv -}} },
   archivePrefix = {arXiv}
 }</pre>
+    {% elsif paper.description %}
+      <p>{{ paper.description | escape }}</p>
     {% endif %}
   </div>
 </li>

@@ -50,10 +50,14 @@ const papers = Array.from(document.querySelectorAll('.paper'), paper => ({
 const entries = [
   { title: 'About ' + document.title, href: '#about' },
   { title: 'News', href: '#news' },
-  { title: 'Selected Publications', href: '#publications' },
+  { title: 'Preprints', href: '#preprints' },
+  { title: 'Publications', href: '#publications' },
   ...papers,
-  { title: 'Projects', href: '#projects' },
-  { title: document.querySelector('#veph h3').textContent, href: '#veph', terms: 'robotic agents research proposal Feishu' },
+  ...Array.from(document.querySelectorAll('#projects > h2, #projects article h3'), heading => ({
+    title: heading.textContent.trim(),
+    href: '#' + heading.parentElement.id,
+    terms: heading.matches('h3') ? heading.parentElement.textContent + ' ' + (heading.parentElement.dataset.searchTerms || '') : ''
+  })),
   ...Array.from(document.querySelectorAll('.profile-links a'), link => ({
     title: link.textContent.trim(), href: link.getAttribute('href')
   }))

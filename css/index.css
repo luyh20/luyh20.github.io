@@ -67,8 +67,6 @@ h2 a:hover { color: var(--accent); text-decoration: none; }
 .profile-header { text-align: center; }
 .profile-header h1 { margin-bottom: 1rem; }
 .profile-header h1 strong { font-weight: 700; }
-.introduction strong { font-weight: 700; }
-.profile-header p { font-size: .875rem; font-weight: 400; line-height: 1.5rem; }
 .introduction { display: flow-root; }
 .portrait { float: right; width: 30%; margin: 0 0 1rem 1rem; }
 .portrait img, .paper-preview img {
@@ -79,14 +77,14 @@ h2 a:hover { color: var(--accent); text-decoration: none; }
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
 }
 .portrait img { aspect-ratio: 1170 / 1492; object-fit: cover; object-position: center; }
-.portrait figcaption { margin-top: 1rem; font: .875rem/1.5 monospace; }
-.portrait figcaption a { color: inherit; }
-.profile-links { display: flex; gap: .85rem; flex-wrap: wrap; }
+.profile-links { display: flex; gap: .85rem; flex-wrap: wrap; margin-bottom: .35rem; }
+.profile-email { font: .875rem/1.5 monospace; }
 section { margin-bottom: 2rem; }
 .news-list { max-height: 15rem; overflow-y: auto; }
 .news-list table { width: 100%; border-collapse: collapse; }
 .news-list td, .news-list th { padding: .6rem .3rem; text-align: left; vertical-align: top; }
 .news-list th { width: 20%; font-weight: 700; white-space: nowrap; }
+.news-list strong { font-weight: 700; }
 .news-list a { color: inherit; font-weight: 500; }
 .news-list a:hover { color: var(--accent); }
 .papers { margin: 2rem 0 0; padding: 0; list-style: none; }

@@ -1,0 +1,43 @@
+- id: worldflow
+  title: "WorldFlow: Joint Video and 3D Motion Prediction via Large-Scale Pretraining"
+  venue: arXiv preprint, 2026
+  description: >-
+    WorldFlow predicts how a scene will look and how points in it will move in 3D.
+    A single model learns both tasks from 1.44 million object-level samples spanning
+    simulated and real-world interactions.
+  project_page: https://worldflow-rbs.github.io/
+  github: roboscience-ai/worldflow
+  arxiv: "2610.39278"
+  press_name: 机器之心
+  press_url: https://mp.weixin.qq.com/s/nxr34ClHbxqVW3aULfyYVQ
+  image: worldflow.webp
+  image_alt: Predicted motion trajectories across nine WorldFlow scenes
+  authors:
+    - luyh
+    - jiongxu_chen
+    - hexiang_wei
+    - jiajin_wu
+    - juelin_li
+    - mingjian_liang
+    - fan_yang
+    - zhuowei_liang
+    - zihao_liu
+    - zhennan_wang
+    - sheng_wang
+    - lin_shao
+  equal_contributors: [luyh, jiongxu_chen]
+
+- id: layoutdsl
+  title: "Learning an Interior Layout Policy in a Domain Specific Language Action Space"
+  venue: arXiv preprint, 2026
+  description: >-
+    In LayoutDSL, we represent layout actions in a text-based DSL and post-train an LLM with SFT and RL to generate furniture layouts.
+  arxiv: "2608.07547"
+  image: layoutdsl.webp
+  image_alt: A LayoutDSL furniture plan beside its rendered living room
+  authors:
+    - luyh
+    - weichen_zhang
+    - wenyi_xiao
+    - haohui_chen
+    - yiyun_fei

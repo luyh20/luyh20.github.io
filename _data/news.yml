@@ -1,6 +1,6 @@
 - date: Nov 20, 2026
   description: >-
-    [机器之心](https://mp.weixin.qq.com/s/nxr34ClHbxqVW3aULfyYVQ) featured our work on [WorldFlow](https://worldflow-rbs.github.io/).
+    [机器之心](https://mp.weixin.qq.com/s/nxr34ClHbxqVW3aULfyYVQ) featured our work on **WorldFlow**.
 
 - date: Oct 29, 2026
   description: >-
@@ -8,7 +8,8 @@
 
 - date: Jul 31, 2026
   description: >-
-    Our [LayoutDSL paper](https://arxiv.org/pdf/2608.07547) is on arXiv. It studies how a language model can learn to arrange furniture using a domain-specific language.
+    [LayoutDSL](https://arxiv.org/pdf/2608.07547) is on arXiv.
+    We formulate layout actions as a text-based DSL and post-train an LLM via SFT and RL to master spatial design.
 
 - date: Jun 2023
   description: >-
@@ -16,12 +17,13 @@
 
 - date: Jun 2023
   description: >-
-    Tsinghua University named me an Outstanding Master's Graduate Student (top 2%) and awarded my thesis an Outstanding Master's Thesis honor (top 5%).
+    Tsinghua University named me an **Outstanding Master's Graduate Student (top 2%)** and awarded my thesis an Outstanding Master's Thesis honor (top 5%).
 
 - date: Mar 2023
   description: >-
     I led the CV-AI team at the Intel Indoor Robot Learning Grand Challenge in Shanghai. We won first prize in the Recognition Track (few-shot detection)
     and second prize in the Manipulation Track (grasping and feeding).
+    [新闻｜电子系获Intel室内机器人学习全球挑战赛决赛一等奖](https://mp.weixin.qq.com/s/JrdkqteIdLa0ymyonZKqsg)
 
 - date: Jun 2022
   description: >-
