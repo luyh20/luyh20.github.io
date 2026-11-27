@@ -23,7 +23,6 @@
 
 - id: steps
   title: "STEPS: Scene-Grounded Task Escalation through Progressive Skill Learning toward Open-Ended Goals"
-  author_note: Anonymous authors
   venue: Under review, 2026
   description: STEPS turns a human goal into simulated manipulation tasks, then tests whether a robot agent’s learned skills transfer to new scenes and held-out tasks.
   project_page: https://steps-rbs.github.io/

@@ -44,15 +44,15 @@ document.querySelectorAll('.resources button').forEach(button => {
 
 const papers = Array.from(document.querySelectorAll('.paper'), paper => ({
   title: paper.querySelector('h3').textContent.trim(),
-  href: paper.closest('#under-review') ? paper.querySelector('h3 a').getAttribute('href') : '#' + paper.id,
-  terms: [paper.id, paper.querySelector('.authors').textContent, paper.querySelector('.resources').textContent, paper.querySelector('.detail')?.textContent].join(' ')
+  href: paper.closest('#other-projects') ? paper.querySelector('h3 a').getAttribute('href') : '#' + paper.id,
+  terms: [paper.id, paper.querySelector('.authors')?.textContent, paper.querySelector('.resources').textContent, paper.querySelector('.detail')?.textContent].join(' ')
 }));
 const entries = [
   { title: 'About ' + document.title, href: '#about' },
   { title: 'News', href: '#news' },
   { title: 'Preprints', href: '#preprints' },
   { title: 'Publications', href: '#publications' },
-  { title: 'Under Review', href: '#under-review' },
+  { title: 'Other Projects', href: '#other-projects' },
   ...papers,
   ...Array.from(document.querySelectorAll('.project-section, .project-section article'), item => {
     const heading = item.querySelector('h2, h3');

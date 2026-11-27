@@ -40,7 +40,7 @@ layout: null
         <a href="#about" aria-current="page">about</a>
         <a href="#preprints">preprints</a>
         <a href="#publications">publications</a>
-        <a href="#under-review">under review</a>
+        <a href="#other-projects">other projects</a>
         {% if site.show_projects %}<a href="#projects">projects</a>{% endif %}
         <button type="button" id="search-toggle" aria-label="Search this site (Ctrl or Command K)" hidden><span id="search-shortcut">ctrl k</span> <i class="fas fa-search" aria-hidden="true"></i></button>
         <button type="button" id="theme-toggle" aria-label="Toggle light and dark theme" hidden><span class="light-icon"><i class="fas fa-sun" aria-hidden="true"></i></span><span class="dark-icon"><i class="fas fa-moon" aria-hidden="true"></i></span></button>
@@ -81,12 +81,12 @@ layout: null
         </table>
       </div>
     </section>
-    {% assign paper_groups = 'Preprints,Publications,Under Review' | split: ',' %}
+    {% assign paper_groups = 'Preprints,Publications,Other Projects' | split: ',' %}
     {% for label in paper_groups %}
     {% assign group = label | slugify %}
     <section id="{{ group }}" aria-labelledby="{{ group }}-title">
       <h2 id="{{ group }}-title">
-        <a href="#{{ group }}"{% if group == 'under-review' %} id="other-projects"{% endif %}>{{ label }}</a>
+        <a href="#{{ group }}"{% if group == 'other-projects' %} id="under-review"{% endif %}>{{ label }}</a>
       </h2>
       <ol class="papers">
         {% for paper in site.data[group] %}

@@ -12,6 +12,7 @@
   </div>
   <div class="paper-body">
     <h3><a href="{{ landing }}">{{ paper.title | escape }}{% if paper.short_name %} ({{ paper.short_name | escape }}){% endif %}</a></h3>
+    {% if paper.authors.size > 0 %}
     <p class="authors">
       {%- for author_id in paper.authors -%}
         {%- if forloop.index0 == visible_authors -%}<span class="extra-authors" id="{{ paper.id }}-authors">{%- endif -%}
@@ -21,11 +22,10 @@
         {%- if author.is_me -%}<span class="self">{{ name }}</span>{%- elsif author.website -%}<a href="{{ author.website }}">{{ name }}</a>{%- else -%}{{ name }}{%- endif -%}
         {%- if paper.equal_contributors contains author_id -%}<sup>*</sup>{%- endif -%}
         {%- if forloop.last and forloop.index > visible_authors -%}</span>{%- endif -%}
-      {%- else -%}
-        {{ paper.author_note | escape }}
       {%- endfor -%}
       {% if paper.authors.size > visible_authors %}<button type="button" class="expand-authors" aria-expanded="true" aria-controls="{{ paper.id }}-authors" data-count="{{ paper.authors.size | minus: visible_authors }}" hidden>Show fewer authors</button>{% endif %}
     </p>
+    {% endif %}
     <p>{% if paper.venue contains 'arXiv' %}{{ paper.venue }}{% else %}<em>{{ paper.venue | split: ',' | first }}</em>,{{ paper.venue | split: ',' | last }}{% endif %}</p>
     {% if paper.equal_contributors %}<p class="credit">* Equal contribution</p>{% endif %}
     {% for award in paper.awards %}<p class="credit">{{ award }}</p>{% endfor %}
