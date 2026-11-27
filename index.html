@@ -9,6 +9,8 @@ layout: null
   <title>{{ site.name | escape }}</title>
   <meta name="description" content="{{ site.description | markdownify | strip_html | strip | escape }}">
   <link rel="canonical" href="{{ '/' | absolute_url }}">
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="16x16 32x32 48x48">
+  <link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml" sizes="any">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;display=swap">
   <link rel="stylesheet" href="{{ '/css/index.css' | relative_url }}?v={{ site.time | date: '%s' }}">
@@ -38,7 +40,7 @@ layout: null
         <a href="#about" aria-current="page">about</a>
         <a href="#preprints">preprints</a>
         <a href="#publications">publications</a>
-        <a href="#other-projects">other projects</a>
+        <a href="#under-review">under review</a>
         {% if site.show_projects %}<a href="#projects">projects</a>{% endif %}
         <button type="button" id="search-toggle" aria-label="Search this site (Ctrl or Command K)" hidden><span id="search-shortcut">ctrl k</span> <i class="fas fa-search" aria-hidden="true"></i></button>
         <button type="button" id="theme-toggle" aria-label="Toggle light and dark theme" hidden><span class="light-icon"><i class="fas fa-sun" aria-hidden="true"></i></span><span class="dark-icon"><i class="fas fa-moon" aria-hidden="true"></i></span></button>
@@ -79,10 +81,13 @@ layout: null
         </table>
       </div>
     </section>
-    {% assign paper_groups = 'preprints,publications' | split: ',' %}
-    {% for group in paper_groups %}
+    {% assign paper_groups = 'Preprints,Publications,Under Review' | split: ',' %}
+    {% for label in paper_groups %}
+    {% assign group = label | slugify %}
     <section id="{{ group }}" aria-labelledby="{{ group }}-title">
-      <h2 id="{{ group }}-title"><a href="#{{ group }}">{{ group | capitalize }}</a></h2>
+      <h2 id="{{ group }}-title">
+        <a href="#{{ group }}"{% if group == 'under-review' %} id="other-projects"{% endif %}>{{ label }}</a>
+      </h2>
       <ol class="papers">
         {% for paper in site.data[group] %}
           {% include publication.html paper=paper %}
@@ -90,22 +95,6 @@ layout: null
       </ol>
     </section>
     {% endfor %}
-    <section class="project-section" id="other-projects" aria-labelledby="other-projects-title">
-      <h2 id="other-projects-title"><a href="#other-projects">Other Projects</a></h2>
-      {% for project in site.data.other_projects %}
-      <article class="project-row" id="{{ project.id }}">
-        <div class="paper-preview">
-          <a href="{{ project.url }}" aria-label="{{ project.name | escape }} project homepage">
-            <img src="{{ '/images/' | append: project.image | relative_url }}" alt="{{ project.image_alt | escape }}" loading="lazy">
-          </a>
-        </div>
-        <div class="paper-body">
-          <h3><a href="{{ project.url }}">{{ project.name | escape }}</a></h3>
-          <p>{{ project.description | escape }}</p>
-        </div>
-      </article>
-      {% endfor %}
-    </section>
     {% if site.show_projects %}
     <section class="project-section" id="projects" aria-labelledby="projects-title">
       <h2 id="projects-title"><a href="#projects">Projects</a></h2>

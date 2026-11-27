@@ -1,0 +1,31 @@
+- id: motionrep
+  title: "Motion Beyond Pixels: Learning Future Visual Representations for Object-Centric Dynamics"
+  short_name: MotionRep
+  venue: Under review, 2026
+  description: MotionRep uses a diffusion transformer to jointly predict future DINO features and the 3D trajectories of points on an object.
+  project_page: https://motionrep.github.io/
+  arxiv: "2611.34644"
+  image: motionrep.webp
+  image_alt: Predicted 3D trajectories of a cup moving onto a blue coaster
+  authors:
+    - chengzhi_zhao
+    - juelin_li
+    - zhennan_wang
+    - sheng_wang
+    - zhuoman_liu
+    - luyh
+    - jiongxu_chen
+    - haitang_feng
+    - yanjie_li
+    - lin_shao
+  visible_authors: 6
+  equal_contributors: [chengzhi_zhao, juelin_li]
+
+- id: steps
+  title: "STEPS: Scene-Grounded Task Escalation through Progressive Skill Learning toward Open-Ended Goals"
+  author_note: Anonymous authors
+  venue: Under review, 2026
+  description: STEPS turns a human goal into simulated manipulation tasks, then tests whether a robot agent’s learned skills transfer to new scenes and held-out tasks.
+  project_page: https://steps-rbs.github.io/
+  image: steps.webp
+  image_alt: Simulated robot arm reaching toward a tray on a cabinet

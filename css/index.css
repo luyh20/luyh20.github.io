@@ -88,7 +88,7 @@ section { margin-bottom: 2rem; }
 .news-list a { color: inherit; font-weight: 500; }
 .news-list a:hover { color: var(--accent); }
 .papers { margin: 2rem 0 0; padding: 0; list-style: none; }
-.paper, .project-row { display: grid; grid-template-columns: 2fr 8fr 2fr; margin: 0 -15px 1.35rem; }
+.paper { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 3fr); margin: 0 -15px 1.35rem; }
 .paper-preview, .paper-body { min-width: 0; padding: 0 15px; }
 .paper h3 a, .authors a { color: inherit; }
 .paper h3 a:hover, .authors a:hover { color: var(--accent); }
@@ -97,9 +97,6 @@ section { margin-bottom: 2rem; }
 .paper-preview:hover video + img, .paper-preview:focus-within video + img { display: none; }
 .paper h3 { margin: 0; font: 400 1rem/1.5 Roboto, "Helvetica Neue", Arial, sans-serif; }
 #projects h3 { font-size: 1rem; font-weight: 500; margin: 1rem 0 .25rem; }
-.project-row h3 { font-size: 1rem; font-weight: 500; margin: 0 0 .25rem; }
-.project-row p { margin: 0; }
-#other-projects h2 { margin-bottom: 1.5rem; }
 .paper p { margin: 0; }
 .paper .self { font-style: normal; text-decoration: underline; text-underline-offset: 2px; }
 .paper sup { line-height: 0; }
@@ -154,7 +151,7 @@ dialog::backdrop { background: rgba(0, 0, 0, .45); }
   .nav-links { flex-direction: column; align-items: flex-end; width: 100%; padding-bottom: .5rem; }
   .js .menu-button[aria-expanded="false"] + .nav-links { display: none; }
   .portrait { float: none; width: 100%; margin: 0 0 1rem; }
-  .paper, .project-row { display: block; }
+  .paper { display: block; }
   .paper-preview { margin-bottom: .75rem; }
   .news-list th { padding-right: .6rem; }
   footer { position: static; }
