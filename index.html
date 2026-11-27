@@ -38,6 +38,7 @@ layout: null
         <a href="#about" aria-current="page">about</a>
         <a href="#preprints">preprints</a>
         <a href="#publications">publications</a>
+        <a href="#other-projects">other projects</a>
         {% if site.show_projects %}<a href="#projects">projects</a>{% endif %}
         <button type="button" id="search-toggle" aria-label="Search this site (Ctrl or Command K)" hidden><span id="search-shortcut">ctrl k</span> <i class="fas fa-search" aria-hidden="true"></i></button>
         <button type="button" id="theme-toggle" aria-label="Toggle light and dark theme" hidden><span class="light-icon"><i class="fas fa-sun" aria-hidden="true"></i></span><span class="dark-icon"><i class="fas fa-moon" aria-hidden="true"></i></span></button>
@@ -89,8 +90,22 @@ layout: null
       </ol>
     </section>
     {% endfor %}
+    <section class="project-section" id="other-projects" aria-labelledby="other-projects-title">
+      <h2 id="other-projects-title"><a href="#other-projects">Other Projects</a></h2>
+      {% for project in site.data.other_projects %}
+      <article class="project-row" id="{{ project.id }}">
+        <div class="paper-preview">
+          <img src="{{ '/images/' | append: project.image | relative_url }}" alt="{{ project.image_alt | escape }}" loading="lazy">
+        </div>
+        <div class="paper-body">
+          <h3><a href="{{ project.url }}">{{ project.name | escape }}</a></h3>
+          <p>{{ project.description | escape }}</p>
+        </div>
+      </article>
+      {% endfor %}
+    </section>
     {% if site.show_projects %}
-    <section id="projects" aria-labelledby="projects-title">
+    <section class="project-section" id="projects" aria-labelledby="projects-title">
       <h2 id="projects-title"><a href="#projects">Projects</a></h2>
       <article id="veph" data-search-terms="robotic agents">
         <h3>VEPH: A Verification-Guided Harness for Evolving Policy Ensembles for Compositional Generalization</h3>

@@ -53,10 +53,10 @@ const entries = [
   { title: 'Preprints', href: '#preprints' },
   { title: 'Publications', href: '#publications' },
   ...papers,
-  ...Array.from(document.querySelectorAll('#projects > h2, #projects article h3'), heading => ({
-    title: heading.textContent.trim(),
-    href: '#' + heading.parentElement.id,
-    terms: heading.matches('h3') ? heading.parentElement.textContent + ' ' + (heading.parentElement.dataset.searchTerms || '') : ''
+  ...Array.from(document.querySelectorAll('.project-section, .project-section article'), item => ({
+    title: item.querySelector('h2, h3').textContent.trim(),
+    href: '#' + item.id,
+    terms: item.matches('article') ? item.textContent + ' ' + (item.dataset.searchTerms || '') : ''
   })),
   ...Array.from(document.querySelectorAll('.profile-links a'), link => ({
     title: link.textContent.trim(), href: link.getAttribute('href')

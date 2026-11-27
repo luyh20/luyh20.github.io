@@ -1,0 +1,13 @@
+- id: motionrep
+  name: MotionRep
+  url: https://motionrep.github.io/
+  description: A diffusion transformer jointly predicts future DINO features and the 3D trajectories of points on an object.
+  image: motionrep.webp
+  image_alt: Predicted 3D trajectories of a cup moving onto a blue coaster
+
+- id: steps
+  name: STEPS
+  url: https://steps-rbs.github.io/
+  description: STEPS turns a human goal into simulated manipulation tasks, then tests whether a robot agent’s learned skills transfer to new scenes and held-out tasks.
+  image: steps.webp
+  image_alt: Simulated robot arm reaching toward a tray on a cabinet
