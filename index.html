@@ -95,7 +95,9 @@ layout: null
       {% for project in site.data.other_projects %}
       <article class="project-row" id="{{ project.id }}">
         <div class="paper-preview">
-          <img src="{{ '/images/' | append: project.image | relative_url }}" alt="{{ project.image_alt | escape }}" loading="lazy">
+          <a href="{{ project.url }}" aria-label="{{ project.name | escape }} project homepage">
+            <img src="{{ '/images/' | append: project.image | relative_url }}" alt="{{ project.image_alt | escape }}" loading="lazy">
+          </a>
         </div>
         <div class="paper-body">
           <h3><a href="{{ project.url }}">{{ project.name | escape }}</a></h3>
